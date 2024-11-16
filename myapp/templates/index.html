@@ -1,0 +1,592 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahaveer Enterprises</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body onload="myFunction()">
+    <div id="loader">
+        <h1>MAHAVEER ENTERPRISES</h1>
+        <div class="pl">
+            <div class="pl__outer-ring"></div>
+            <div class="pl__inner-ring"></div>
+            <div class="pl__track-cover"></div>
+            <div class="pl__ball">
+                <div class="pl__ball-texture"></div>
+                <div class="pl__ball-outer-shadow"></div>
+                <div class="pl__ball-inner-shadow"></div>
+                <div class="pl__ball-side-shadows"></div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="myDiv">
+
+
+        <nav id="home">
+            <div class="logo">
+                <img src="{% static '/images/mahaveer logo white.jpg' %}" alt="">
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="#About">About Us</a></li>
+                <li><a href="#services">Products & Services</a></li>
+                <li><a href="#Current">Running Projects</a></li>
+            </ul>
+            <button><a href="#contact">contact us</a></button>
+            <button><a href="{% url 'record_click' 'location' %}">Visite office
+                </a>
+                </a></button>
+
+        </nav>
+        <div class="mob_nav" id="Home">
+            <button class="mob_logo">
+                <img src="{% static '/images/mahaveer logo white.jpg' %}" alt="">
+            </button>
+            <button class="mob_nav_btn"><a href="#contact">contact us</a></button>
+            <button class="mob_nav_btn"><a href="{% url 'record_click' 'location' %}">visite office</a></button>
+
+            <button class="drop_dwm" onclick="display()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+        </div>
+        <div class="nav_drop" id="nav_drop">
+            <ul>
+                <li><a href="">- Home</a></li>
+                <li><a href="#About">- About Us</a></li>
+                <li><a href="#service">- Products & Services</a></li>
+                <li><a href="#Current">- Running Projects</a></li>
+
+            </ul>
+        </div>
+        <div class="slider">
+
+            <div class="list">
+                <div class="item">
+                    <img src="{% static '/images/pexels-pixabay-327482.jpg' %}" alt="image1">
+                </div>
+                <div class="item">
+                    <img src="{% static 'images/pexels-filirovska-4913793.jpg' %}" alt="image2">
+                </div>
+                <div class="item">
+                    <img src="{% static 'images/pexels-emma-pollard-676280-1534924.jpg' %}" alt="image3">
+                </div>
+                <div class="item">
+                    <img src="{% static 'images/pexels-maltelu-1669754.jpg' %}" alt="image4">
+                </div>
+                <div class="item">
+                    <img src="{% static 'images/pexels-pixabay-159045.jpg' %}" alt="image5">
+                </div>
+            </div>
+            <!--button prev and next-->
+            <div class="buttons">
+                <button id="prev">
+                    <  </button>
+                        <button id="next">></button>
+            </div>
+            <!--Dots (if 5 items => 5 dots)-->
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="topleft">Welcome To Mahaveer Enterprises</div>
+            <div class="TagLine">Providing Complete Buiding Construction Material Since 25 Year PAN India.</div>
+            <button class="sb1"><a href="#contact">Feel Free To Contact</a></button>
+            <button class="sb2"><a href="#services">Discover Our Services</a></button>
+        </div>
+
+        <div class="About_sec" id="About">
+            <div class="AboutME">ABOUT MAHAVEER ENTERPRISES</div>
+
+            <div class="About_image">
+                <div><img src="{% static '/images/3d-rendering-cartoon-house.jpg' %}" alt=""></div>
+            </div>
+            <div class="About_discription">We have been providing complete solution for Building construction
+                since last 25 years Pan India. Mahaveer Enterprises, subsidiary
+                company of Kapil Jain & Co., are a supplier of Top Quality Brands.
+                We offer materials in projects on wholesale prices. We are a proud
+                company to serve the customers who happily come back to us each
+                time. Customer Satisfaction is of prime importance to us, hence we aim
+                to fulfill all customer requirements.</div>
+        </div>
+
+
+
+
+        <div class="product_serv container" id="services">
+            <h1>Products & Services</h1>
+
+            <div class="slider-container">
+                <button class="nav-btn prev-btn">&larr;</button>
+                <div class="card-slider">
+
+                    <div class="card blank">
+                        <img src="https://via.placeholder.com/300x200" alt="Card 1">
+                        <div class="product_dis">Paints</div>
+                        <button class="card-btn"></button>
+                    </div>
+                    <div class="card">
+                        <img src="{% static '/images/paints-149407782-612x612.jpg' %}" alt="Paints">
+                        <div class="product_name">Paints</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li> Asian Paints</li>
+                                <li> ICI Dulux</li>
+                                <li> Berger Paints</li>
+                                <li> British Paints</li>
+                                <li> Nippon Paints</li>
+                                <li> Jotun paints</li>
+                            </ul>
+                        </div>
+                        <button class="card-btn"></button>
+                    </div>
+                    <div class="card active">
+                        <img src="{% static '/images/texture.jpg' %}" alt="Card 3">
+                        <div class="product_name">Texturs</div>
+                        <div class="product_dis">
+                            <ul>
+                            <li>Conctrete texture</li>
+                            <li>natural stone texture</li>
+                            <li>Brick texture</li>
+                            <li>Wood texture</li>
+                            <li>Rustic texture</li>
+
+                        </ul></div>
+                        <button class="card-btn">Coming Soon</button>
+                    </div>
+                    <div class="card">
+                        <img src="{% static '/images/waterproof paints.jpg' %}" alt="Waterproof Paints">
+                        <div class="product_name">Waterproof Paint</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li>Spray foam roof insulation</li>
+                                <li>Polyuria waterproofing coatings</li>
+                            </ul>
+                        </div>
+                        <button class="card-btn"></button>
+                    </div>
+                    <div class="card">
+                        <img src="{% static '/images/acc blocks.jpg' %}" alt="ACC Block">
+                        <div class="product_name">ACC Blocks</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li>Aerocon</li>
+                                <li>Ultratech Extralite</li>
+                                <li>Orilite</li>
+                            </ul>
+                        </div>
+                        <button class="card-btn"></button>
+                    </div>
+                    <div class="card">
+                        <img src="{% static '/images/Electrical-Switches.jpg' %}" alt="Electrical Switches">
+                        <div class="product_name">Electrical Switches</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li>KEI</li>
+                                <li>Finolex</li>
+                                <li>Alemac Switches</li>
+                                <li>Polycab Cables</li>
+                            </ul>
+                        </div>
+                        <button class="card-btn"></button>
+                    </div>
+                    <div class="card">
+                        <img src="{% static '/images/pexels-wood coating paints-221027.jpg' %}"
+                            alt="Wood Coating Paints">
+                        <div class="product_name">Wood Coating paints</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li>Nippon</li>
+                                <li>ICA</li>
+                                <li>Asian Paints</li>
+                            </ul>
+                        </div>
+                        <button class="card-btn"></button>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" alt="Card 8">
+                        <div class="product_name">Coming Soon</div>
+                        <div class="product_dis"></div>
+                        <button class="card-btn"></button>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" alt="Card 9">
+                        <div class="product_name">Coming Soon</div>
+                        <div class="product_dis"></div>
+                        <button class="card-btn"></button>
+                    </div>
+                    <div class="card blank">
+                        <img src="https://via.placeholder.com/300x200" alt="Card 10">
+                        <button class="card-btn"></button>
+                    </div>
+
+                </div>
+                <button class="nav-btn next-btn">&rarr;</button>
+            </div>
+        </div>
+
+
+        <div class="mob_product_serv mob_container" id="Service">
+            <h1>Products & Services</h1>
+
+            <div class="mob_slider-container">
+                <div class="mob_card-slider">
+
+                    <div class="card blank">
+                        <img src="https://via.placeholder.com/300x200" alt="Card 10">
+                        <button class="card-btn">Click Me</button>
+                    </div>
+                    <div class="mob_card">
+                        <img src="{% static '/images/paints-149407782-612x612.jpg' %}" alt="Paints">
+                        <div class="product_name">Paints</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li> Asian Paints</li>
+                                <li> ICI Dulux</li>
+                                <li> Berger Paints</li>
+                                <li> British Paints</li>
+                                <li> Nippon Paints</li>
+                                <li> Jotun paints</li>
+                            </ul>
+                        </div>
+                        <button class="mob_card-btn"></button>
+                    </div>
+                    <div class="mob_card">
+                        <img src="{% static '/images/texture.jpg' %}" alt="Card 3">
+                        <div class="product_name">Texturs</div>
+                        <div class="product_dis"><ul>
+                            <li>Conctrete texture</li>
+                            <li>natural stone texture</li>
+                            <li>Brick texture</li>
+                            <li>Wood texture</li>
+                            <li>Rustic texture</li>
+
+                        </ul></div>
+                        <button class="mob_card-btn">Coming Soon</button>
+                    </div>
+                    <div class="mob_card">
+                        <img src="{% static '/images/waterproof paints.jpg' %}" alt="Waterproof Paints">
+                        <div class="product_name">Waterproof Paint</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li>Spray foam roof insulation</li>
+                                <li>Polyuria waterproofing coatings</li>
+                            </ul>
+                        </div>
+                        <button class="mob_card-btn"></button>
+                    </div>
+                    <div class="mob_card">
+                        <img src="{% static '/images/acc blocks.jpg' %}" alt="ACC Block">
+                        <div class="product_name">ACC Blocks</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li>Aerocon</li>
+                                <li>Ultratech Extralite</li>
+                                <li>Orilite</li>
+                            </ul>
+                        </div>
+                        <button class="mob_card-btn"></button>
+                    </div>
+                    <div class="mob_card">
+                        <img src="{% static '/images/Electrical-Switches.jpg' %}" alt="Electrical Switches">
+                        <div class="product_name">Electrical Switches</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li>KEI</li>
+                                <li>Finolex</li>
+                                <li>Alemac Switches</li>
+                                <li>Polycab Cables</li>
+                            </ul>
+                        </div>
+                        <button class="mob_card-btn"></button>
+                    </div>
+                    <div class="mob_card">
+                        <img src="{% static '/images/pexels-wood coating paints-221027.jpg' %}"
+                            alt="Wood Coating Paints">
+                        <div class="product_name">Wood Coating paints</div>
+                        <div class="product_dis">
+                            <ul>
+                                <li>Nippon</li>
+                                <li>ICA</li>
+                                <li>Asian Paints</li>
+                            </ul>
+                        </div>
+                        <button class="mob_card-btn"></button>
+                    </div>
+                    <div class="mob_card">
+                        <img src="https://via.placeholder.com/300x200" alt="Card 8">
+                        <div class="product_name">Coming Soon</div>
+                        <div class="product_dis"></div>
+                        <button class="mob_card-btn"></button>
+                    </div>
+                    <div class="mob_card">
+                        <img src="https://via.placeholder.com/300x200" alt="Card 9">
+                        <div class="product_name">Coming Soon</div>
+                        <div class="product_dis"></div>
+                        <button class="mob_card-btn"></button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="companies_logo container">
+            <h1>Trusted By The Best</h1>
+            <div class="logos">
+                <div><img
+                        src="{% static '/images/toppng.com-03-january-2019andyleave-a-comment-nippon-paint-malaysia-logo-333x398.png' %}"
+                        alt="Nippon Paints"></div>
+                <div><img src="{% static '/images/1729688428998.png' %}" alt="Asian Paints"></div>
+                <div><img src="{% static '/images/pngaaa.com-2070718.png' %}" alt="Berger Paints"></div>
+                <div><img src="{% static '/images/pngegg.png' %}" alt="ICI Dulux Paints"></div>
+                <div><img src="{% static '/images/pngwing.com.png' %}" alt="jotun Paints"></div>
+            </div>
+        </div>
+
+        <div class="running_pro" id="Current">
+            <h1>Running Projects</h1>
+            <div class="project_image">
+                <div><img src="{% static '/images/R1.jpg' %}" alt=""></div>
+            </div>
+            <div class="project_dis">"Currently underway at Agrawal Hostel,
+                our team is transforming the exterior walls with a stylish,
+                rustic texture finish. This painting and texture work highlights durability while bringing a warm,
+                earthy elegance to the building's facade. Every brushstroke is crafted to add depth and character,
+                enhancing the hostel's architectural charm. The project reflects our commitment to quality and an eye
+                for timeless aesthetics,
+                creating an inviting exterior for residents and visitors alike."</div>
+        </div>
+        <div class="running_pro" id="Current">
+            <div class="project_image" style="left: 900px;">
+                <div><img src="{% static '/images/The-Park.jpg' %}" alt=""></div>
+            </div>
+            <div class="project_dis" style="right: 700px; left: 0px;">"Our team is enhancing The Park Hotel's
+                exterior with a sophisticated concrete wall texture,
+                blending modern elegance with durability.
+                This unique texture work brings a refined,
+                urban feel to the hotel's facade,
+                creating a stunning first impression for guests. Each layer is crafted to offer both resilience and
+                aesthetic appeal,
+                ensuring a polished, long-lasting look. This project exemplifies our dedication to quality and
+                contemporary style,
+                elevating the hotel's architectural presence."</div>
+
+
+        </div>
+        <div class="running_pro" id="Current">
+            <div class="project_image">
+                <div><img src="{% static '/images/avila2.jpg' %}" alt=""></div>
+            </div>
+            <div class="project_dis">Avila Meadows is receiving a sophisticated exterior upgrade with our specialized
+                painting and texture work. This project is designed to enhance the building's natural beauty, adding
+                depth and texture to the facade for a captivating look. Each layer is applied with care, blending
+                aesthetics with durability to create a timeless finish. Our work at Avila Meadows showcases our
+                commitment to quality, ensuring a striking and lasting exterior for all to admire.</div>
+        </div>
+
+
+        <div class="running_pro">
+            <h1>Completed Projects</h1>
+            <div class="project_image">
+                <div><img src="{% static '/images/mahakal.jpg' %}" alt=""></div>
+            </div>
+            <div class="project_dis">We are honored to have completed the painting project at the revered Mahakal
+                Temple. Our work aimed to enhance the temple's spiritual ambiance with vibrant, enduring colors that
+                reflect its cultural significance. Each stroke was thoughtfully applied, honoring the sacred space while
+                ensuring a lasting and beautiful finish. This project underscores our dedication to quality and respect
+                for places of worship. The result is a refreshed, inviting atmosphere for devotees and visitors alike
+            </div>
+        </div>
+        <div class="running_pro" id="Current">
+            <div class="project_image" style="left: 900px;">
+                <div><img src="{% static '/images/barod house.jpg' %}" alt=""></div>
+            </div>
+            <div class="project_dis" style="right: 700px; left: 0px;">Our recently completed work at Barod House
+                combines artistry and durability with a mix of PU paint, rustic texture, and concrete texture finishes.
+                Each wall reflects a meticulous blend of contemporary and timeless aesthetics, bringing warmth and depth
+                to the space. The PU paint ensures lasting protection, while the rustic and concrete textures add
+                character and elegance to the interiors. This project highlights our expertise in creating refined and
+                enduring environments that stand out. The result is a stylish and inviting space tailored to perfection.
+            </div>
+
+        </div>
+        <div class="running_pro" id="Current">
+            <div class="project_image">
+                <div><img src="{% static '/images/sincha.jpg' %}" alt=""></div>
+            </div>
+            <div class="project_dis">Our recent work at Simcha Island Adventure Park brings vibrant energy and durability to this
+                thrilling destination. From expertly applied paints that withstand the elements to the supply of high-quality AAC
+                blocks, each detail enhances the park's appeal and resilience. The fresh, bold colors infuse excitement into every
+                corner, while the robust materials ensure long-lasting structure. This project reflects our commitment to quality in
+                creating inviting, adventure-ready spaces for guests of all ages.</div>
+        </div>
+        <div class="clients_review">
+            <div class="client_heading">Our Happy Clients</div>
+            <figure class="snip1390">
+               <!---- <div class="round_design"></div>
+                <div class="round_design2"></div>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample3.jpg" alt="profile-sample3"
+                    class="profile" /> -->
+                <figcaption>
+                    <h2>Mr. Sandeep Barod</h2>
+                    <h4>Engineer</h4>
+                    <blockquote> Exilent and professional work, and texture work is very great. </blockquote>
+                </figcaption>
+            </figure>
+            <figure class="snip1390 hover">
+             <!--   <div class="round_design"></div>
+                <div class="round_design2"></div>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5"
+                    class="profile" /> -->
+                <figcaption>
+                    <h2>Mr. Kulbhusan Mittel
+                    </h2>
+                    <h4>Architect</h4>
+                    <blockquote>Best construction service Provider in M.P., work is very fantastic and on time.</blockquote>
+                </figcaption>
+            </figure>
+            <figure class="snip1390">
+                <!--   <div class="round_design"></div>
+                <div class="round_design2"></div>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5"
+                    class="profile" /> -->
+                <figcaption>
+                    <h2>Mr. Vyas</h2>
+                    <h4>Engineer</h4>
+                    <blockquote>Texture workdone is really amazing great variety in textures.</blockquote>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="contact" id="contact">
+            <div class="contact_heading">Contact Us</div>
+            <div class="contact_btns">
+                <div class="circle convex-concave"><a href="{% url 'contact_whatsapp' 'contact' %}">
+                        <img src="{% static '/images/whatsapp.png' %}" alt="whatsapp"></a>
+                </div>
+                <div class="circle convex-concave"><a href="mailto:Mahaveerenterprisesindore@gmail.com">
+                        <img src="{% static '/images/4202011_email_gmail_mail_logo_social_icon.png' %}" alt="email"></a>
+                </div>
+                <div class="circle convex-concave"><a href="{% url 'initiate_call' 'contact' %}">
+                        <img src="{% static '/images/mobile-phones-telephone-call-clip-art-mobile-phone-logo-d4cdab25e60ee5af430980fff877d052.png' %}"
+                            alt="call"></a>
+                </div>
+                <div class="circle convex-concave"><a href="{% url 'record_click' 'location' %}">
+                        <img src="{% static '/images/taihoa-holiday-units-map-drawing-pin-clip-art-map-7ba99968c7ab1c1e8665534a9a53261a.png' %}"
+                            alt="map"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="social_media">
+            <div class="social_heading">Social Media</div>
+            <div class="frame">
+                <a href="#" class="btn">
+                    <i class="fab fa-facebook-f" style="color: #3b5998;"></i>
+                </a>
+
+                <a href="#" class="btn">
+                    <i class="fa-brands fa-instagram" style="color: #ea4c89;"></i>
+                </a>
+                <a href="#" class="btn">
+                    <i class="fab fa-linkedin-in" style="color:#0e76a8;"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <footer>
+
+
+            <div class="footerBoX">
+
+                <div class="round_design3"></div>
+                <div class="round_design4"></div>
+                <h2>MAHAVEER ENTERPRISES</h2>
+                <p>We have been providing complete solution for Building construction
+                    since last 25 years Pan India.
+                    We are a proud company to serve the customers who happily come back to us each
+                    time. Customer Satisfaction is of prime importance to us, hence we aim
+                    to fulfill all customer requirements.</p>
+
+
+            </div>
+
+            <div class="footerBlackInfo">
+                <div class="get">
+                    <h2>GET IN TOUCH</h2>
+                    <div> <i class="fa-solid fa-location-dot" style="display: inline;"></i>
+                        <p style="display: inline; "><a href="https://maps.app.goo.gl/nBR7a9gpV35wPdMo6">28, Gulmarg
+                                Colony, Indore, India 452001</a></p>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-envelope" style="display: inline;"></i>
+                        <p style="display: inline; "><a
+                                href="mailto:Mahaveerenterprisesindore@gmail.com">Mahaveerenterprisesindore@gmail.com</a>
+                        </p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-phone" style="display: inline;"></i>
+                        <p style="display: inline; "><a href="199999129329">199999129329</a></p>
+                    </div>
+
+                    <div class="contacts">
+
+                        <div class="logo4">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div class="logo4">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+
+                        <div class="logo4">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="quick">
+                    <h2>QUICK LINKS</h2>
+                    <div> <i class="fa-solid fa-arrow-right"></i></i>
+                        <a href="#Home">Home</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-arrow-right"></i></i>
+                        <a href="#About">About Us</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <a href="#Service">Our Services</a>
+                    </div>
+                    
+                    <div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <a href="#contact">contect Us</a>
+                    </div>
+                </div>
+
+
+
+
+        </footer>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
